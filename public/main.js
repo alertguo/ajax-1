@@ -20,9 +20,9 @@ getJSON.onclick = () => {
   request.open('GET', '5.json')
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
-      const object = JSON.parse(request.response)
+      let object = JSON.parse(request.response)
       // JSON.parse()将符合JSON语法的字符串转换成JS对应类型(这里是转换成对象)
-      const array = JSON.parse(object)
+      const array = object
       myName.textContent = object.name
     }
   }
